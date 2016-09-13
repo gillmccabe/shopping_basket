@@ -9,13 +9,16 @@ public class BasketTest {
   Item item2;
   Item item3;
   Item item4;
+  Customer customer1;
 
   @Before public void before(){
-    basket = new Basket();
+    customer1 = new Customer(1, true);
+    basket = new Basket(customer1);
     item1 = new Item("bread", 1.5, false);
     item2 = new Item("milk", 2, true);
     item3 = new Item("steak", 10, false);
     item4 = new Item("cheese", 8, true);
+    
 
   }
 
@@ -79,6 +82,13 @@ public class BasketTest {
     basket.addItem(item4);
     basket.addItem(item4);
     assertEquals(25.2, basket.getTotalWithDiscountOver20(), 0.01);
+  }
+
+  @Test
+  public void canGetTotalWithLoyaltyCard(){
+    basket.addItem(item3);
+    basket.addItem(item3);
+    assertEquals(19.6, basket.getTotalWithLoyaltyCard(), 0.01);
   }
 
 }
