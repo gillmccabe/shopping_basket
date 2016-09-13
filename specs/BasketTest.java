@@ -10,8 +10,8 @@ public class BasketTest {
 
   @Before public void before(){
     basket = new Basket();
-    item1 = new Item("bread", 1.5);
-    item2 = new Item("milk", 2);
+    item1 = new Item("bread", 1.5, false);
+    item2 = new Item("milk", 2, true);
 
   }
 
@@ -43,5 +43,20 @@ public class BasketTest {
     basket.empty();
     assertEquals(0, basket.getCount());
   }
+
+  @Test
+  public void canGetTotalCost(){
+    basket.addItem(item1);
+    basket.addItem(item2);
+    assertEquals(3.5, basket.getTotalCost(), 0.01);
+  }
+
+  @Test 
+  public void canGetBogofItems(){
+    basket.addItem(item1);
+    basket.addItem(item2);
+    assertEquals(2, basket.getCount());
+    assertEquals(1, basket.getBogofItems().size());
+    }
 
 }

@@ -8,7 +8,7 @@ public class ItemTest {
 
   @Before 
   public void before() {
-    item = new Item("bread", 1.5);
+    item = new Item("bread", 1.5, false);
   }
 
   @Test
@@ -19,6 +19,11 @@ public class ItemTest {
   @Test
   public void itemHasCost() {
     assertEquals(1.5, item.getCost(), 0.01);
+  }
+
+  @Test
+  public void itemHasBogof() {
+    assertEquals(false, item.getBogof());
   }
  
 }

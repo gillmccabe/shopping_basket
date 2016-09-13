@@ -27,6 +27,26 @@ public class Basket {
     basket.clear();
   }
 
+  public double getTotalCost(){
+    double total_cost = 0;
+    for(Item item : basket){
+      total_cost += item.getCost();
+    }
+    return total_cost;
+  }
+
+  public ArrayList<Item> getBogofItems(){
+    ArrayList<Item> bogof_items = new ArrayList<Item>();
+    for (Item item : basket){
+      if (item.getBogof() == true){
+        bogof_items.add(item);
+      }
+    }
+    return bogof_items;
+  }
+
+
+  
 
 
 }
