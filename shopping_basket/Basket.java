@@ -46,25 +46,32 @@ public class Basket {
   }
 
   public double getTotalCostWithBogof(){
-      double total_cost = 0;
-      ArrayList<Item> bogof_items = new ArrayList<Item>();
-      for (Item item : basket){
-        if ((item.getBogof() == true) && (bogof_items.contains(item))){
-          bogof_items.remove(item);
-              }
-        else if (item.getBogof() == true){
-          total_cost += item.getCost();
-          bogof_items.add(item);
-        }
-        else if (item.getBogof() == false){
-          total_cost += item.getCost();
-        }
+    double total_cost = 0;
+    ArrayList<Item> bogof_items = new ArrayList<Item>();
+    for (Item item : basket){
+      if ((item.getBogof() == true) && (bogof_items.contains(item))){
+        bogof_items.remove(item);
       }
-      return total_cost;
+      else if (item.getBogof() == true){
+        total_cost += item.getCost();
+        bogof_items.add(item);
+      }
+      else if (item.getBogof() == false){
+        total_cost += item.getCost();
+      }
     }
+    return total_cost;
+  }
 
 
-  
+  public double getTotalWithDiscountOver20(){
+    double total_cost = getTotalCostWithBogof();
+    if(total_cost > 20){
+      total_cost -= (total_cost/100 * 10);
+    }
+    return total_cost;
+  }
+
 
 
 }

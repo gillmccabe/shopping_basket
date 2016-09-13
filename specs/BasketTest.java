@@ -7,11 +7,15 @@ public class BasketTest {
   Basket basket;
   Item item1;
   Item item2;
+  Item item3;
+  Item item4;
 
   @Before public void before(){
     basket = new Basket();
     item1 = new Item("bread", 1.5, false);
     item2 = new Item("milk", 2, true);
+    item3 = new Item("steak", 10, false);
+    item4 = new Item("cheese", 8, true);
 
   }
 
@@ -66,6 +70,15 @@ public class BasketTest {
     basket.addItem(item2);
     basket.addItem(item2);
     assertEquals(5, basket.getTotalCostWithBogof(), 0.01);
+  }
+
+  @Test
+  public void canGetTotalCostWithDiscount(){
+    basket.addItem(item3);
+    basket.addItem(item3);
+    basket.addItem(item4);
+    basket.addItem(item4);
+    assertEquals(25.2, basket.getTotalWithDiscountOver20(), 0.01);
   }
 
 }
