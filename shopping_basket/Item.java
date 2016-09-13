@@ -2,9 +2,9 @@ package shopping_basket;
 
 public class Item {
   private String name;
-  private int cost;
+  private double cost;
 
-  public Item(String name, int cost){
+  public Item(String name, double cost){
     this.name = name;
     this.cost = cost;
   }
@@ -17,11 +17,11 @@ public class Item {
     this.name = newName;
   }
 
-  public int getCost(){
+  public double getCost(){
     return this.cost;
   }
 
-  public void setCost(int newCost){
+  public void setCost(double newCost){
     this.cost = newCost;
   }
 
