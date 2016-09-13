@@ -57,6 +57,15 @@ public class BasketTest {
     basket.addItem(item2);
     assertEquals(2, basket.getCount());
     assertEquals(1, basket.getBogofItems().size());
-    }
+  }
+
+  @Test
+  public void canGetTotalCostWithBogof(){
+    basket.addItem(item1);
+    basket.addItem(item1);
+    basket.addItem(item2);
+    basket.addItem(item2);
+    assertEquals(5, basket.getTotalCostWithBogof(), 0.01);
+  }
 
 }
