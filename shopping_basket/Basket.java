@@ -9,7 +9,9 @@ public class Basket {
     this.basket = new ArrayList<Item>();
   }
 
-
+  public int getCount(){
+    return basket.size();
+  }
 
 
 }
