@@ -100,4 +100,11 @@ public class BasketTest {
     assertEquals(true, basket1.customerCanAffordBasket());
   }
 
+  @Test
+  public void canCheckCustomerCannotAffordBasket(){
+    basket2.addItem(item3);
+    basket2.addItem(item3);
+    assertEquals(false, basket2.customerCanAffordBasket());
+  }
+
 }
