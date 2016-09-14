@@ -14,8 +14,8 @@ public class BasketTest {
   Customer customer2;
 
   @Before public void before(){
-    customer1 = new Customer(true, 25);
-    customer2 = new Customer(false, 15);
+    customer1 = new Customer("Brian", true, 25);
+    customer2 = new Customer("Harriet", false, 15);
     basket1 = new Basket(customer1);
     basket2 = new Basket(customer2);
     item1 = new Item("bread", 1.5, false);
