@@ -38,17 +38,17 @@ public class Basket {
     return total_cost;
   }
 
-  // public ArrayList<Item> getBogofItems(){
-  //   for (Item item : basket){
-  //     if (item.getBogof() == true){
-  //       bogof_items.add(item);
-  //     }
-  //   }
-  //   return bogof_items;
-  // }
+  public ArrayList<Item> getBogofItems(){
+    for (Item item : basket){
+      if (item.getBogof() == true){
+        bogof_items.add(item);
+      }
+    }
+    return bogof_items;
+  }
 
   public double getTotalWithDiscountOver20(){
-    double total_cost = getTotalCostWithBogof();
+    double total_cost = getTotalCost();
     if(total_cost > 20){
       total_cost -= (total_cost/100 * 10);
     }
