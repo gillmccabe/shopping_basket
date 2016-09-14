@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Basket {
 
-  private ArrayList<Item> basket;
+  protected ArrayList<Item> basket;
   private ArrayList<Item> bogof_items;
   private Customer customer;
 

@@ -1,20 +1,24 @@
-// package shopping_basket;
-// import java.util.*;
+package shopping_basket;
+import java.util.*;
 
-// public class Cashier {
+public class Cashier {
 
-//   private Basket basket;
+  private Basket basket;
 
-//   public Cashier(Basket basket){
-//     this.basket = basket;
-//   }
+  public Cashier(Basket basket){
+    this.basket = basket;
+  }
 
-//   public double getTotalCost(){
-//     double total_cost = 0;
-//     for(Item item : basket.basket()){
-//       total_cost += item.getCost();
-//     }
-//     return total_cost;
-//   }
+  public Basket getBasket(){
+    return basket;
+  }
 
-// }
+  // public double getTotalCost(){
+  //   double total_cost = 0;
+  //   for(Item item : Basket.basket) {
+  //     total_cost += item.getCost();
+  //   }
+  //   return total_cost;
+  // }
+
+}
