@@ -18,8 +18,6 @@ public class BasketTest {
     item2 = new Item("milk", 2, true);
     item3 = new Item("steak", 10, false);
     item4 = new Item("cheese", 8, true);
-    
-
   }
 
   @Test

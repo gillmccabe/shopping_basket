@@ -4,10 +4,12 @@ import java.util.*;
 public class Basket {
 
   private ArrayList<Item> basket;
+  private ArrayList<Item> bogof_items;
   private Customer customer;
 
   public Basket(Customer customer){
     this.basket = new ArrayList<Item>();
+    this.bogof_items = new ArrayList<Item>();
     this.customer = customer;
   }
 
@@ -37,7 +39,6 @@ public class Basket {
   }
 
   public ArrayList<Item> getBogofItems(){
-    ArrayList<Item> bogof_items = new ArrayList<Item>();
     for (Item item : basket){
       if (item.getBogof() == true){
         bogof_items.add(item);
@@ -48,7 +49,6 @@ public class Basket {
 
   public double getTotalCostWithBogof(){
     double total_cost = 0;
-    ArrayList<Item> bogof_items = new ArrayList<Item>();
     for (Item item : basket){
       if ((item.getBogof() == true) && (bogof_items.contains(item))){
         bogof_items.remove(item);
