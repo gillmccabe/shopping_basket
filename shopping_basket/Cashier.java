@@ -13,6 +13,10 @@ public class Cashier {
     return basket;
   }
 
+
+  //  WANT TO REFACTOR TO MOVE ALL TOTAL AND DISCOUNT METHODS FROM BASKET TO CASHIER
+  
+
   // public double getTotalCost(){
   //   double total_cost = 0;
   //   for(Item item : Basket.basket) {
