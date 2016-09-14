@@ -81,6 +81,14 @@ public class Basket {
     return total_cost;
   }
 
+  public boolean customerCanAffordBasket(){
+    double total_cost = getTotalWithLoyaltyCard();
+    if (customer.getMoney() >= total_cost){
+      return true;
+    }
+    return false;
+  }
+
 
 
 }

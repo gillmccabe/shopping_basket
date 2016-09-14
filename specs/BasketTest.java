@@ -4,7 +4,8 @@ import shopping_basket.*;
 
 public class BasketTest {
 
-  Basket basket;
+  Basket basket1;
+  Basket basket2;
   Item item1;
   Item item2;
   Item item3;
@@ -15,7 +16,8 @@ public class BasketTest {
   @Before public void before(){
     customer1 = new Customer(true, 25);
     customer2 = new Customer(false, 15);
-    basket = new Basket(customer1);
+    basket1 = new Basket(customer1);
+    basket2 = new Basket(customer2);
     item1 = new Item("bread", 1.5, false);
     item2 = new Item("milk", 2, true);
     item3 = new Item("steak", 10, false);
@@ -24,71 +26,78 @@ public class BasketTest {
 
   @Test
   public void basketStartsEmpty(){
-    assertEquals(0, basket.getCount());
+    assertEquals(0, basket1.getCount());
   } 
 
   @Test
   public void canAddItemToBasket(){
-    assertEquals(0, basket.getCount());
-    basket.addItem(item1);
-    assertEquals(1, basket.getCount());
+    assertEquals(0, basket1.getCount());
+    basket1.addItem(item1);
+    assertEquals(1, basket1.getCount());
   }
 
   @Test
   public void canRemoveItemFromBasket(){
-    basket.addItem(item1);
-    assertEquals(1, basket.getCount());
-    basket.removeItem(item1);
-    assertEquals(0, basket.getCount());
+    basket1.addItem(item1);
+    assertEquals(1, basket1.getCount());
+    basket1.removeItem(item1);
+    assertEquals(0, basket1.getCount());
   }
 
   @Test
   public void canEmptyBasket(){
-    basket.addItem(item1);
-    basket.addItem(item2);
-    assertEquals(2, basket.getCount());
-    basket.empty();
-    assertEquals(0, basket.getCount());
+    basket1.addItem(item1);
+    basket1.addItem(item2);
+    assertEquals(2, basket1.getCount());
+    basket1.empty();
+    assertEquals(0, basket1.getCount());
   }
 
   @Test
   public void canGetTotalCost(){
-    basket.addItem(item1);
-    basket.addItem(item2);
-    assertEquals(3.5, basket.getTotalCost(), 0.01);
+    basket1.addItem(item1);
+    basket1.addItem(item2);
+    assertEquals(3.5, basket1.getTotalCost(), 0.01);
   }
 
   @Test 
   public void canGetBogofItems(){
-    basket.addItem(item1);
-    basket.addItem(item2);
-    assertEquals(2, basket.getCount());
-    assertEquals(1, basket.getBogofItems().size());
+    basket1.addItem(item1);
+    basket1.addItem(item2);
+    assertEquals(2, basket1.getCount());
+    assertEquals(1, basket1.getBogofItems().size());
   }
 
   @Test
   public void canGetTotalCostWithBogof(){
-    basket.addItem(item1);
-    basket.addItem(item1);
-    basket.addItem(item2);
-    basket.addItem(item2);
-    assertEquals(5, basket.getTotalCostWithBogof(), 0.01);
+    basket1.addItem(item1);
+    basket1.addItem(item1);
+    basket1.addItem(item2);
+    basket1.addItem(item2);
+    assertEquals(5, basket1.getTotalCostWithBogof(), 0.01);
   }
 
   @Test
   public void canGetTotalCostWithDiscount(){
-    basket.addItem(item3);
-    basket.addItem(item3);
-    basket.addItem(item4);
-    basket.addItem(item4);
-    assertEquals(25.2, basket.getTotalWithDiscountOver20(), 0.01);
+    basket1.addItem(item3);
+    basket1.addItem(item3);
+    basket1.addItem(item4);
+    basket1.addItem(item4);
+    assertEquals(25.2, basket1.getTotalWithDiscountOver20(), 0.01);
   }
 
   @Test
   public void canGetTotalWithLoyaltyCard(){
-    basket.addItem(item3);
-    basket.addItem(item3);
-    assertEquals(19.6, basket.getTotalWithLoyaltyCard(), 0.01);
+    basket1.addItem(item3);
+    basket1.addItem(item3);
+    assertEquals(19.6, basket1.getTotalWithLoyaltyCard(), 0.01);
+  }
+
+  @Test
+  public void canCheckCustomerCanAffordBasket(){
+    basket1.addItem(item3);
+    basket1.addItem(item3);
+    assertEquals(true, basket1.customerCanAffordBasket());
   }
 
 }

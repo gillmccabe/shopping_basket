@@ -4,19 +4,11 @@ import java.util.*;
 public class Customer {
 
   boolean loyaltyCard;
-  int money;
+  double money;
 
   public Customer(boolean loyaltyCard, double money){
     this.loyaltyCard = loyaltyCard;
     this.money = money;
-  }
-
-  public int getId(){
-    return this.id;
-  }
-
-  public void setId(int newId){
-    this.id = newId;
   }
 
   public boolean getLoyaltyCard(){
@@ -27,11 +19,11 @@ public class Customer {
     this.loyaltyCard = newLoyaltyCard;
   }
 
-  public int getMoney(){
+  public double getMoney(){
     return this.money;
   }
 
-  public void setMoney(int newMoney){
+  public void setMoney(double newMoney){
     this.money = newMoney;
   }
 
