@@ -47,8 +47,17 @@ public class Basket {
     return bogof_items;
   }
 
-  public double getTotalWithDiscountOver20(){
+  public double getTotalWithBogofItems(){
     double total_cost = getTotalCost();
+    ArrayList<Item> bogof_items = getBogofItems();
+    for (Item item : bogof_items){
+      total_cost -= ((item.getCost()) / 2);
+    }
+    return total_cost;
+  }
+
+  public double getTotalWithDiscountOver20(){
+    double total_cost = getTotalWithBogofItems();
     if(total_cost > 20){
       total_cost -= (total_cost/100 * 10);
     }
