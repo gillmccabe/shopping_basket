@@ -3,12 +3,12 @@ import java.util.*;
 
 public class Customer {
 
-  int id;
   boolean loyaltyCard;
+  int money;
 
-  public Customer(int id, boolean loyaltyCard){
-    this.id = id;
+  public Customer(boolean loyaltyCard, double money){
     this.loyaltyCard = loyaltyCard;
+    this.money = money;
   }
 
   public int getId(){
@@ -26,5 +26,14 @@ public class Customer {
   public void setLoyaltyCard(boolean newLoyaltyCard){
     this.loyaltyCard = newLoyaltyCard;
   }
+
+  public int getMoney(){
+    return this.money;
+  }
+
+  public void setMoney(int newMoney){
+    this.money = newMoney;
+  }
+
 
 }

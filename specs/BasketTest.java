@@ -10,9 +10,11 @@ public class BasketTest {
   Item item3;
   Item item4;
   Customer customer1;
+  Customer customer2;
 
   @Before public void before(){
-    customer1 = new Customer(1, true);
+    customer1 = new Customer(true, 25);
+    customer2 = new Customer(false, 15);
     basket = new Basket(customer1);
     item1 = new Item("bread", 1.5, false);
     item2 = new Item("milk", 2, true);

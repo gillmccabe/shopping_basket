@@ -53,7 +53,8 @@ public class Basket {
       if ((item.getBogof() == true) && (bogof_items.contains(item))){
         bogof_items.remove(item);
       }
-      else if (item.getBogof() == true){
+      else 
+      if (item.getBogof() == true){
         total_cost += item.getCost();
         bogof_items.add(item);
       }
