@@ -47,6 +47,7 @@ public class Basket {
     return bogof_items;
   }
 
+// RELIES ON CUSTOMER PUTTING TWO OF BOGOF ITEMS INTO BASKET
   public double getTotalWithBogofItems(){
     double total_cost = getTotalCost();
     ArrayList<Item> bogof_items = getBogofItems();
