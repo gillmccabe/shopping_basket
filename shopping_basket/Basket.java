@@ -38,32 +38,14 @@ public class Basket {
     return total_cost;
   }
 
-  public ArrayList<Item> getBogofItems(){
-    for (Item item : basket){
-      if (item.getBogof() == true){
-        bogof_items.add(item);
-      }
-    }
-    return bogof_items;
-  }
-
-  public double getTotalCostWithBogof(){
-    double total_cost = 0;
-    for (Item item : basket){
-      if ((item.getBogof() == true) && (bogof_items.contains(item))){
-        bogof_items.remove(item);
-      }
-      else 
-      if (item.getBogof() == true){
-        total_cost += item.getCost();
-        bogof_items.add(item);
-      }
-      else if (item.getBogof() == false){
-        total_cost += item.getCost();
-      }
-    }
-    return total_cost;
-  }
+  // public ArrayList<Item> getBogofItems(){
+  //   for (Item item : basket){
+  //     if (item.getBogof() == true){
+  //       bogof_items.add(item);
+  //     }
+  //   }
+  //   return bogof_items;
+  // }
 
   public double getTotalWithDiscountOver20(){
     double total_cost = getTotalCostWithBogof();
