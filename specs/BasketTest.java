@@ -53,12 +53,12 @@ public class BasketTest {
     assertEquals(0, basket1.getCount());
   }
 
-  @Test
-  public void canGetTotalCost(){
-    basket1.addItem(item1);
-    basket1.addItem(item2);
-    assertEquals(3.5, basket1.getTotalCost(), 0.01);
-  }
+  // @Test
+  // public void canGetTotalCost(){
+  //   basket1.addItem(item1);
+  //   basket1.addItem(item2);
+  //   assertEquals(3.5, basket1.getTotalCost(), 0.01);
+  // }
 
   @Test 
   public void canGetBogofItems(){
