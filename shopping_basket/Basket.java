@@ -57,6 +57,20 @@ public class Basket {
     return total_cost;
   }
 
+  // public double getBogofTotal(){  
+  //   ArrayList<Item> bogof_items = getBogofItems();
+  //   double bogof_total = 0;  
+  //   for (Item item : bogof_items){
+  //     bogof_items.remove(item);
+  //     if (bogof_items.contains(item))
+  //     {
+  //       bogof_total += item.getCost();
+  //       bogof_items.remove(bogof_items.indexOf(item));
+  //     }
+  //   }
+  //   return bogof_total;
+  // }
+
   public double getTotalWithDiscountOver20(){
     double total_cost = getTotalWithBogofItems();
     if(total_cost > 20){

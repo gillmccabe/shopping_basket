@@ -31,11 +31,5 @@ public class CashierTest {
     assertNotNull(cashier1.getBasket());
   }
 
-  // @Test
-  // public void canGetTotalCost(){
-  //   basket1.addItem(item1);
-  //   basket1.addItem(item2);
-  //   assertEquals(3.5, cashier1.getTotalCost(), 0.01);
-  // }
 
 }
